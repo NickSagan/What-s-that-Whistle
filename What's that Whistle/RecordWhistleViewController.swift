@@ -75,4 +75,55 @@ class RecordWhistleViewController: UIViewController {
 
         stackView.addArrangedSubview(failLabel)
     }
+    
+    class func getDocumentsDirectory() -> URL {
+        let paths = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)
+        let documentsDirectory = paths[0]
+        return documentsDirectory
+    }
+
+    class func getWhistleURL() -> URL {
+        return getDocumentsDirectory().appendingPathComponent("whistle.m4a")
+    }
+    
+    @objc func nextTapped() {
+
+    }
+    
+    @objc func recordTapped() {
+//        if whistleRecorder == nil {
+//            startRecording()
+//        } else {
+//            finishRecording(success: true)
+//        }
+    }
+    
+    func startRecording() {
+        // 1
+        view.backgroundColor = UIColor(red: 0.6, green: 0, blue: 0, alpha: 1)
+
+        // 2
+        recordButton.setTitle("Tap to Stop", for: .normal)
+
+        // 3
+        let audioURL = RecordWhistleViewController.getWhistleURL()
+        print(audioURL.absoluteString)
+
+        // 4
+        let settings = [
+            AVFormatIDKey: Int(kAudioFormatMPEG4AAC),
+            AVSampleRateKey: 12000,
+            AVNumberOfChannelsKey: 1,
+            AVEncoderAudioQualityKey: AVAudioQuality.high.rawValue
+        ]
+
+        do {
+            // 5
+            whistleRecorder = try AVAudioRecorder(url: audioURL, settings: settings)
+            whistleRecorder.delegate = self
+            whistleRecorder.record()
+        } catch {
+            finishRecording(success: false)
+        }
+    }
 }
