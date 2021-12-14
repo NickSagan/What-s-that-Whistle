@@ -59,8 +59,20 @@ class RecordWhistleViewController: UIViewController {
     }
 
     func loadRecordingUI() {
+        recordButton = UIButton()
+        recordButton.translatesAutoresizingMaskIntoConstraints = false
+        recordButton.setTitle("Tap to Record", for: .normal)
+        recordButton.titleLabel?.font = UIFont.preferredFont(forTextStyle: .title1)
+        recordButton.addTarget(self, action: #selector(recordTapped), for: .touchUpInside)
+        stackView.addArrangedSubview(recordButton)
     }
 
     func loadFailUI() {
+        let failLabel = UILabel()
+        failLabel.font = UIFont.preferredFont(forTextStyle: .headline)
+        failLabel.text = "Recording failed: please ensure the app has access to your microphone."
+        failLabel.numberOfLines = 0
+
+        stackView.addArrangedSubview(failLabel)
     }
 }
