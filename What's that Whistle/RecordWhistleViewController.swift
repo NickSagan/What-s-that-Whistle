@@ -11,6 +11,7 @@ import AVFoundation
 class RecordWhistleViewController: UIViewController, AVAudioRecorderDelegate {
     var stackView: UIStackView!
     var recordButton: UIButton!
+    var playButton: UIButton!
 
     var recordingSession: AVAudioSession!
     var whistleRecorder: AVAudioRecorder!
@@ -65,6 +66,15 @@ class RecordWhistleViewController: UIViewController, AVAudioRecorderDelegate {
         recordButton.titleLabel?.font = UIFont.preferredFont(forTextStyle: .title1)
         recordButton.addTarget(self, action: #selector(recordTapped), for: .touchUpInside)
         stackView.addArrangedSubview(recordButton)
+        
+        playButton = UIButton()
+        playButton.translatesAutoresizingMaskIntoConstraints = false
+        playButton.setTitle("Tap to Play", for: .normal)
+        playButton.isHidden = true
+        playButton.alpha = 0
+        playButton.titleLabel?.font = UIFont.preferredFont(forTextStyle: .title1)
+        playButton.addTarget(self, action: #selector(playTapped), for: .touchUpInside)
+        stackView.addArrangedSubview(playButton)
     }
 
     func loadFailUI() {
@@ -98,6 +108,14 @@ class RecordWhistleViewController: UIViewController, AVAudioRecorderDelegate {
 
         if success {
             recordButton.setTitle("Tap to Re-record", for: .normal)
+            
+            if playButton.isHidden {
+                UIView.animate(withDuration: 0.35) { [unowned self] in
+                    self.playButton.isHidden = false
+                    self.playButton.alpha = 1
+                }
+            }
+            
             navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Next", style: .plain, target: self, action: #selector(nextTapped))
         } else {
             recordButton.setTitle("Tap to Record", for: .normal)
@@ -111,6 +129,14 @@ class RecordWhistleViewController: UIViewController, AVAudioRecorderDelegate {
     @objc func recordTapped() {
         if whistleRecorder == nil {
             startRecording()
+            
+            if !playButton.isHidden {
+                UIView.animate(withDuration: 0.35) { [unowned self] in
+                    self.playButton.isHidden = true
+                    self.playButton.alpha = 0
+                }
+                
+            }
         } else {
             finishRecording(success: true)
         }
