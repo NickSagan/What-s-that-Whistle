@@ -17,7 +17,22 @@ class AddCommentsViewController: UIViewController, UITextViewDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
+        title = "Comments"
+        navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Submit", style: .plain, target: self, action: #selector(submitTapped))
+        comments.text = placeholder
+    }
+
+    @objc func submitTapped() {
+        let vc = SubmitViewController()
+        vc.genre = genre
+
+        if comments.text == placeholder {
+            vc.comments = ""
+        } else {
+            vc.comments = comments.text
+        }
+
+        navigationController?.pushViewController(vc, animated: true)
     }
     
     override func loadView() {
