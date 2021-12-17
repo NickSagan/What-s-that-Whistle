@@ -7,7 +7,7 @@
 
 import UIKit
 
-class AddCommentsViewController: UIViewController {
+class AddCommentsViewController: UIViewController, UITextViewDelegate {
 
     var genre: String!
 
@@ -20,6 +20,21 @@ class AddCommentsViewController: UIViewController {
         // Do any additional setup after loading the view.
     }
     
+    override func loadView() {
+        view = UIView()
+        view.backgroundColor = .white
+
+        comments = UITextView()
+        comments.translatesAutoresizingMaskIntoConstraints = false
+        comments.delegate = self
+        comments.font = UIFont.preferredFont(forTextStyle: .body)
+        view.addSubview(comments)
+
+        comments.leadingAnchor.constraint(equalTo: view.leadingAnchor).isActive = true
+        comments.trailingAnchor.constraint(equalTo: view.trailingAnchor).isActive = true
+        comments.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor).isActive = true
+        comments.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor).isActive = true
+    }
 
 
 }
