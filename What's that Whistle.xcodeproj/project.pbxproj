@@ -14,6 +14,7 @@
 		911744E62768BED2005D16EA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 911744E52768BED2005D16EA /* Assets.xcassets */; };
 		911744E92768BED2005D16EA /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 911744E72768BED2005D16EA /* LaunchScreen.storyboard */; };
 		911744F12768C055005D16EA /* RecordWhistleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 911744F02768C055005D16EA /* RecordWhistleViewController.swift */; };
+		9144CC77276C77D4002B0AD5 /* SelectGenreViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9144CC76276C77D4002B0AD5 /* SelectGenreViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +27,7 @@
 		911744E82768BED2005D16EA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		911744EA2768BED2005D16EA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		911744F02768C055005D16EA /* RecordWhistleViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecordWhistleViewController.swift; sourceTree = "<group>"; };
+		9144CC76276C77D4002B0AD5 /* SelectGenreViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectGenreViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -60,6 +62,7 @@
 			children = (
 				911744DC2768BECD005D16EA /* AppDelegate.swift */,
 				911744DE2768BECD005D16EA /* SceneDelegate.swift */,
+				9144CC76276C77D4002B0AD5 /* SelectGenreViewController.swift */,
 				911744F02768C055005D16EA /* RecordWhistleViewController.swift */,
 				911744E02768BECD005D16EA /* ViewController.swift */,
 				911744E22768BECD005D16EA /* Main.storyboard */,
@@ -143,6 +146,7 @@
 			files = (
 				911744E12768BECD005D16EA /* ViewController.swift in Sources */,
 				911744DD2768BECD005D16EA /* AppDelegate.swift in Sources */,
+				9144CC77276C77D4002B0AD5 /* SelectGenreViewController.swift in Sources */,
 				911744F12768C055005D16EA /* RecordWhistleViewController.swift in Sources */,
 				911744DF2768BECD005D16EA /* SceneDelegate.swift in Sources */,
 			);
