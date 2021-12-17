@@ -60,6 +60,11 @@ class RecordWhistleViewController: UIViewController, AVAudioRecorderDelegate {
         }
     }
     
+    @objc func nextTapped() {
+        let vc = SelectGenreViewController()
+        navigationController?.pushViewController(vc, animated: true)
+    }
+    
     @objc func playTapped() {
         let audioURL = RecordWhistleViewController.getWhistleURL()
 
@@ -108,10 +113,6 @@ class RecordWhistleViewController: UIViewController, AVAudioRecorderDelegate {
 
     class func getWhistleURL() -> URL {
         return getDocumentsDirectory().appendingPathComponent("whistle.m4a")
-    }
-    
-    @objc func nextTapped() {
-
     }
     
     func finishRecording(success: Bool) {
