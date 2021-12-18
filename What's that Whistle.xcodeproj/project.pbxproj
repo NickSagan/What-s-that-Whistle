@@ -16,6 +16,7 @@
 		911744F12768C055005D16EA /* RecordWhistleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 911744F02768C055005D16EA /* RecordWhistleViewController.swift */; };
 		9144CC77276C77D4002B0AD5 /* SelectGenreViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9144CC76276C77D4002B0AD5 /* SelectGenreViewController.swift */; };
 		9144CC79276C7F31002B0AD5 /* AddCommentsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9144CC78276C7F31002B0AD5 /* AddCommentsViewController.swift */; };
+		9144CC7B276E2D94002B0AD5 /* SubmitViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9144CC7A276E2D94002B0AD5 /* SubmitViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,6 +31,7 @@
 		911744F02768C055005D16EA /* RecordWhistleViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecordWhistleViewController.swift; sourceTree = "<group>"; };
 		9144CC76276C77D4002B0AD5 /* SelectGenreViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectGenreViewController.swift; sourceTree = "<group>"; };
 		9144CC78276C7F31002B0AD5 /* AddCommentsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddCommentsViewController.swift; sourceTree = "<group>"; };
+		9144CC7A276E2D94002B0AD5 /* SubmitViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubmitViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -72,6 +74,7 @@
 				911744E52768BED2005D16EA /* Assets.xcassets */,
 				911744E72768BED2005D16EA /* LaunchScreen.storyboard */,
 				911744EA2768BED2005D16EA /* Info.plist */,
+				9144CC7A276E2D94002B0AD5 /* SubmitViewController.swift */,
 			);
 			path = "What's that Whistle";
 			sourceTree = "<group>";
@@ -147,6 +150,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9144CC7B276E2D94002B0AD5 /* SubmitViewController.swift in Sources */,
 				911744E12768BECD005D16EA /* ViewController.swift in Sources */,
 				911744DD2768BECD005D16EA /* AppDelegate.swift in Sources */,
 				9144CC77276C77D4002B0AD5 /* SelectGenreViewController.swift in Sources */,
