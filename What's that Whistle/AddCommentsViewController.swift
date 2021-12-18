@@ -50,6 +50,11 @@ class AddCommentsViewController: UIViewController, UITextViewDelegate {
         comments.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor).isActive = true
         comments.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor).isActive = true
     }
-
+    
+    func textViewDidBeginEditing(_ textView: UITextView) {
+        if textView.text == placeholder {
+            textView.text = ""
+        }
+    }
 
 }
