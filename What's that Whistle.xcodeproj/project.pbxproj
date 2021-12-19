@@ -17,6 +17,7 @@
 		9144CC77276C77D4002B0AD5 /* SelectGenreViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9144CC76276C77D4002B0AD5 /* SelectGenreViewController.swift */; };
 		9144CC79276C7F31002B0AD5 /* AddCommentsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9144CC78276C7F31002B0AD5 /* AddCommentsViewController.swift */; };
 		9144CC7B276E2D94002B0AD5 /* SubmitViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9144CC7A276E2D94002B0AD5 /* SubmitViewController.swift */; };
+		9144CC7F276EF973002B0AD5 /* CloudKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9144CC7E276EF973002B0AD5 /* CloudKit.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,6 +33,8 @@
 		9144CC76276C77D4002B0AD5 /* SelectGenreViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectGenreViewController.swift; sourceTree = "<group>"; };
 		9144CC78276C7F31002B0AD5 /* AddCommentsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddCommentsViewController.swift; sourceTree = "<group>"; };
 		9144CC7A276E2D94002B0AD5 /* SubmitViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubmitViewController.swift; sourceTree = "<group>"; };
+		9144CC7C276EF961002B0AD5 /* What's that Whistle.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "What's that Whistle.entitlements"; sourceTree = "<group>"; };
+		9144CC7E276EF973002B0AD5 /* CloudKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CloudKit.framework; path = System/Library/Frameworks/CloudKit.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -39,6 +42,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9144CC7F276EF973002B0AD5 /* CloudKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -50,6 +54,7 @@
 			children = (
 				911744DB2768BECD005D16EA /* What's that Whistle */,
 				911744DA2768BECD005D16EA /* Products */,
+				9144CC7D276EF973002B0AD5 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -64,19 +69,28 @@
 		911744DB2768BECD005D16EA /* What's that Whistle */ = {
 			isa = PBXGroup;
 			children = (
+				9144CC7C276EF961002B0AD5 /* What's that Whistle.entitlements */,
 				911744DC2768BECD005D16EA /* AppDelegate.swift */,
 				911744DE2768BECD005D16EA /* SceneDelegate.swift */,
 				9144CC76276C77D4002B0AD5 /* SelectGenreViewController.swift */,
 				9144CC78276C7F31002B0AD5 /* AddCommentsViewController.swift */,
 				911744F02768C055005D16EA /* RecordWhistleViewController.swift */,
 				911744E02768BECD005D16EA /* ViewController.swift */,
+				9144CC7A276E2D94002B0AD5 /* SubmitViewController.swift */,
 				911744E22768BECD005D16EA /* Main.storyboard */,
 				911744E52768BED2005D16EA /* Assets.xcassets */,
 				911744E72768BED2005D16EA /* LaunchScreen.storyboard */,
 				911744EA2768BED2005D16EA /* Info.plist */,
-				9144CC7A276E2D94002B0AD5 /* SubmitViewController.swift */,
 			);
 			path = "What's that Whistle";
+			sourceTree = "<group>";
+		};
+		9144CC7D276EF973002B0AD5 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				9144CC7E276EF973002B0AD5 /* CloudKit.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -303,6 +317,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = "What's that Whistle/What's that Whistle.entitlements";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = M8KC244ECU;
@@ -332,6 +347,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = "What's that Whistle/What's that Whistle.entitlements";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = M8KC244ECU;
