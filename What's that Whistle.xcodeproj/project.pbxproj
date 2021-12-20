@@ -18,6 +18,7 @@
 		9144CC79276C7F31002B0AD5 /* AddCommentsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9144CC78276C7F31002B0AD5 /* AddCommentsViewController.swift */; };
 		9144CC7B276E2D94002B0AD5 /* SubmitViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9144CC7A276E2D94002B0AD5 /* SubmitViewController.swift */; };
 		9144CC7F276EF973002B0AD5 /* CloudKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9144CC7E276EF973002B0AD5 /* CloudKit.framework */; };
+		9144CC812770E22E002B0AD5 /* Whistle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9144CC802770E22E002B0AD5 /* Whistle.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -35,6 +36,7 @@
 		9144CC7A276E2D94002B0AD5 /* SubmitViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubmitViewController.swift; sourceTree = "<group>"; };
 		9144CC7C276EF961002B0AD5 /* What's that Whistle.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "What's that Whistle.entitlements"; sourceTree = "<group>"; };
 		9144CC7E276EF973002B0AD5 /* CloudKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CloudKit.framework; path = System/Library/Frameworks/CloudKit.framework; sourceTree = SDKROOT; };
+		9144CC802770E22E002B0AD5 /* Whistle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Whistle.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -81,6 +83,7 @@
 				911744E52768BED2005D16EA /* Assets.xcassets */,
 				911744E72768BED2005D16EA /* LaunchScreen.storyboard */,
 				911744EA2768BED2005D16EA /* Info.plist */,
+				9144CC802770E22E002B0AD5 /* Whistle.swift */,
 			);
 			path = "What's that Whistle";
 			sourceTree = "<group>";
@@ -164,6 +167,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9144CC812770E22E002B0AD5 /* Whistle.swift in Sources */,
 				9144CC7B276E2D94002B0AD5 /* SubmitViewController.swift in Sources */,
 				911744E12768BECD005D16EA /* ViewController.swift in Sources */,
 				911744DD2768BECD005D16EA /* AppDelegate.swift in Sources */,
