@@ -85,6 +85,21 @@ class ViewController: UITableViewController {
             whistle.comments = record["comments"]
             newWhistles.append(whistle)
         }
+        
+        operation.queryCompletionBlock = { [unowned self] (cursor, error) in
+            DispatchQueue.main.async {
+                if error == nil {
+                    ViewController.isDirty = false
+                    self.whistles = newWhistles
+                    self.tableView.reloadData()
+                } else {
+                    let ac = UIAlertController(title: "Fetch failed", message: "There was a problem fetching the list of whistles; please try again: \(error!.localizedDescription)", preferredStyle: .alert)
+                    ac.addAction(UIAlertAction(title: "OK", style: .default))
+                    self.present(ac, animated: true)
+                }
+            }
+        }
+        CKContainer.default().publicCloudDatabase.add(operation)
     }
 }
 
