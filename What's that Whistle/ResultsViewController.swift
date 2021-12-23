@@ -19,7 +19,39 @@ class ResultsViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
+        title = "Genre: \(whistle.genre!)"
+         navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Download", style: .plain, target: self, action: #selector(downloadTapped))
+
+         tableView.register(UITableViewCell.self, forCellReuseIdentifier: "Cell")
+
+         let reference = CKRecord.Reference(recordID: whistle.recordID, action: .deleteSelf)
+         let pred = NSPredicate(format: "owningWhistle == %@", reference)
+         let sort = NSSortDescriptor(key: "creationDate", ascending: true)
+         let query = CKQuery(recordType: "Suggestions", predicate: pred)
+         query.sortDescriptors = [sort]
+        
+        CKContainer.default().publicCloudDatabase.perform(query, inZoneWith: nil) { [unowned self] results, error in
+            if let error = error {
+                print(error.localizedDescription)
+            } else {
+                if let results = results {
+                    self.parseResults(records: results)
+                }
+            }
+        }
+    }
+    
+    func parseResults(records: [CKRecord]) {
+        var newSuggestions = [String]()
+
+        for record in records {
+             newSuggestions.append(record["text"] as! String)
+        }
+
+        DispatchQueue.main.async { [unowned self] in
+            self.suggestions = newSuggestions
+            self.tableView.reloadData()
+        }
     }
     
     override func numberOfSections(in tableView: UITableView) -> Int {
@@ -97,7 +129,18 @@ class ResultsViewController: UITableViewController {
         whistleRecord["text"] = suggestion as CKRecordValue
         whistleRecord["owningWhistle"] = reference as CKRecordValue
 
-        // more code to come!
+        CKContainer.default().publicCloudDatabase.save(whistleRecord) { [unowned self] record, error in
+            DispatchQueue.main.async {
+                if error == nil {
+                    self.suggestions.append(suggestion)
+                    self.tableView.reloadData()
+                } else {
+                    let ac = UIAlertController(title: "Error", message: "There was a problem submitting your suggestion: \(error!.localizedDescription)", preferredStyle: .alert)
+                    ac.addAction(UIAlertAction(title: "OK", style: .default))
+                    self.present(ac, animated: true)
+                }
+            }
+        }
     }
     
 }
